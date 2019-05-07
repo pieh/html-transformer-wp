@@ -1,12 +1,17 @@
 module.exports = {
   plugins: [
     {
-      resolve: `gatsby-source-wordpress`,
+      resolve: `gatsby-source-graphql`,
       options: {
-        baseUrl: "localhost:7000",
-        useACF: true,
+        // This type will contain remote schema Query type
+        typeName: `WPGraphQL`,
+        // This is field under which it's accessible
+        fieldName: `wpgraphql`,
+        // Url to query from
+        url: `https://demo.wpgraphql.com/graphql`,
       },
     },
+
     {
       resolve: `gatsby-transformer-html`,
       options: {
