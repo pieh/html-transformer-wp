@@ -11,3 +11,11 @@ exports.sourceNodes = ({ actions, schema }) => {
     })
   )
 }
+
+exports.createResolvers = ({ createResolvers }) => {
+  createResolvers({
+    WPGraphQL_Post: {
+      content2: HTMLFieldFromString,
+    },
+  })
+}
